@@ -6,12 +6,12 @@ This script will be run in AWS Lambda.
 
 import logging
 import traceback
-from lib.aws_resources import (
+from utilities.aws_resources import (
     update_os_environment_variables,
     get_code_pipeline_project_and_zip_file_path,
     put_job_status,
 )
-from lib.pivotal_tracker import (
+from utilities.pivotal_tracker import (
     create_pivotal_stories
 )
 from urllib3 import disable_warnings
@@ -32,7 +32,7 @@ def execute_job(project_name, zip_file_path):
     update_os_environment_variables()
     logger.info(f"project_name: {project_name}")
     logger.info(f"zip_file_path: {zip_file_path}")
-    from lib.cxone import execute_cx_one_scan
+    from utilities.cxone import execute_cx_one_scan
     scan_results = execute_cx_one_scan(project_name=project_name, zip_file_path=zip_file_path)
     stories = create_pivotal_stories(scan_results, project_name)
     for story in stories:
