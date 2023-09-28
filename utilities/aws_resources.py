@@ -41,7 +41,7 @@ def find_artifact(artifacts, name):
 def get_artifact(s3, artifact):
     bucket = artifact['location']['s3Location']['bucketName']
     key = artifact['location']['s3Location']['objectKey']
-    logger.info("Artifact = " + bucket + key)
+    logger.info(f"Artifact bucket: {bucket} key: {key}")
     filename = "/tmp/cx-" + str(uuid.uuid4()) + ".zip"
     s3.download_file(bucket, key, filename)
     return filename

@@ -30,7 +30,8 @@ def create_project_if_not_exist(p_input: ProjectInput):
     logger.info("Start create_project_if_not_exist")
     project_name = p_input.name
     project_collection = get_a_list_of_projects(name=project_name)
-    if project_collection.totalCount == 0:
+    logger.info(f"project_collection.filteredTotalCount: {project_collection.filteredTotalCount}")
+    if project_collection.filteredTotalCount == 0:
         logger.info(f"CxOne project with name: {project_name} does not exist, start creating this project")
         result = create_a_project(project_input=p_input)
         logger.info(f"Finish create CxOne project with name {project_name}")

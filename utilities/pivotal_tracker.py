@@ -16,7 +16,6 @@ base_url = "https://www.pivotaltracker.com/services/v5/"
 def get_header():
     return {
         "X-TrackerToken": os.getenv("pivotal_tracker_token"),
-        # "X-TrackerToken": "e72a49898b065c4555f0b57b623b20c0",
         "Content-Type": "application/json"
     }
 

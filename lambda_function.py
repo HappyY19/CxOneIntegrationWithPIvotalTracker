@@ -59,6 +59,6 @@ def lambda_handler(event, context):
 
 
 if __name__ == '__main__':
-    project_name = "happy_test_2023_09_25"
+    project_name = "bodgeit"
     zip_file_path = "/home/happy/Downloads/bodgeit-master.zip"
     execute_job(project_name, zip_file_path)
