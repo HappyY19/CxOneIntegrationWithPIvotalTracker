@@ -56,9 +56,3 @@ def lambda_handler(event, context):
 
     logger.info('Lambda function complete.')
     return "Complete."
-
-
-if __name__ == '__main__':
-    project_name = "bodgeit"
-    zip_file_path = "/home/happy/Downloads/bodgeit-master.zip"
-    execute_job(project_name, zip_file_path)
